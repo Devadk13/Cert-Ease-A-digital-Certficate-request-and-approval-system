@@ -1,0 +1,48 @@
+{% extends 'temp/homestudent.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+<div class="container-fluid bg-dark my-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-3 py-5">
+                    <!-- <div class="py-5"> -->
+                        <!-- <h1 class="display-5 text-white mb-4"></h1> -->
+                        <!-- <p class="text-white mb-0">Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus sed.</p> -->
+                    <!-- </div> -->
+                </div>
+                <div class="col-lg-12">
+                    <div class="appointment-form h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s">
+                     <h1 class="text-white mb-4">List Of Certificates</h1>
+    <table class="table">
+        <tr  class="bg-dark text-light"">
+            <td>Certfifcate Id</td>
+            <td>Certificate</td>
+            <td></td>
+        </tr>
+         {% for i in a %}
+        <tr class="text-light text-capitalize text-light btn-outline-primary" >
+            <td>{{ i.c_id }}</td>
+            <td class="text-uppercase ">{{ i.name }}</td>
+            <td><a href="/crequest/req/{{ i.c_id }}#s" class="btn btn btn-primary text-uppercase " >Request</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+</center>
+</body>
+</html>
+
+{% endblock %}
